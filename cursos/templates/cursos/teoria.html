@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="main-teoria section">    
+    <div class="text-guitar main-content">
+        <h1>Teoria Musical</h1>
+    </div>   
+</section>
+<section class="white-bg section">
+    <div class="grid-curso">
+        <div class="text-body grid-left-up">
+            <h2 class="font-teoria">Aulas de Teoria Musical</h2>
+            <p>Aprenda de uma vez por todas a teoria da música.<br>
+                Se você deseja ter um conhecimento aprofundado em música, se preparar para concursos e vestibulares, ser um professor de referência, venha aprender tudo que precisa para ser um músico diferenciado.
+            </p>
+        </div>
+        <div class="text-body grid-left-down">
+            <h2>Conteúdo</h2>
+            <p><strong>Aulas presenciais na escola ou no conforto do seu lar e também aulas online.</strong></p>
+            <ul>
+                <li>História da música</li>
+                <li>Leitura de partitura</li>
+                <li>Claves</li>
+                <li>Intervalos</li>
+                <li>Genêros musicais</li>
+                <li>Divisão ritmica</li>
+                <li>Solfejos</li>
+                <li>Tempo simples e composto</li>
+                <li>Ostinatos</li>
+                <li>Obras musicais</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <div class="grid-right-up">
+            <img src="{% static 'img/teoria.png' %}" alt="Imagem de uma clave de sol">
+        </div>
+        <div class="grid-right-down form-courses">
+            <h4>Horários, planos e outras informações</h4>
+
+            <form method="POST" action="#envia_contatos">
+                {% csrf_token %}
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                
+                {% for visible_field in form.visible_fields %}
+                        {{ visible_field|as_crispy_field }}
+                {% endfor %}
+
+                <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+                "></div>
+                <br/>
+
+                {% include 'partials/_messages.html' %}
+                <input type="submit" class="btn-enviar" value="Enviar">
+            </form>      
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing" ></div>
+
+<section  class="white-bg">    
+    <div class="main-content ">
+        <h1>Galeria de fotos</h1>
+    </div> 
+</section> 
+   
+<div class="column"> 
+    
+    {% for fotos in fotos %}
+    <div class="card">
+
+        {% if fotos.imagem_fotos %}
+        <a href="{% url 'fotos_detalhes' fotos.id %}">
+            <img class="card-img"
+                 src="{{ fotos.imagem_fotos.url }}"
+                 alt="{{ fotos.titulo_fotos }}">
+        </a>
+        {% endif %}
+
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="{% url 'fotos_detalhes' fotos.id %}">
+                    {{ fotos.titulo_fotos}}
+                </a>
+            </h5>
+            <p class="card-text">{{ fotos.excerto_fotos }}</p>
+            <p class="card-text">
+                <small class="text-muted">
+                    {{ fotos.data_fotos|naturalday|title }}
+                </small>
+            </p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% include 'partials/_pagination.html' %}
+
+{% endblock %}

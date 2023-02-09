@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<section id="endpage" class="main-menu-footer">
+    <div class="">
+        <div class="gridtwo">
+            <div class="title_grid">
+                <img src="{%static 'img/logo200x200.png' %}" alt="Logo emibna"></div> 
+            <div class="title_grid2">
+                <p class="contact"><b>Contatos</b></p>
+                <ul class="contatos">
+                    <li>
+                        <img src="{%static 'img/icon_location.svg' %}" alt="Icone localização" width="30" height="30">
+                        <article>Rua Bernardino Ferreira de Lima, 95 <br>Jd Nova Hortolândia - cep: 13813-091</article>
+                    </li>
+                    <li>
+                        <img src="{%static 'img/icon_email.svg' %}" alt="Icone email" width="30" height="30">
+                        <article>mjkescolademusica@gmail.com</article>
+                    </li>
+                    <li>
+                        <img src="{%static 'img/icon_phone.svg' %}" alt="Icone telefone" width="30" height="30">
+                        <article>(19) 99946-4342</article>
+                    </li>
+                    <li>
+                        <p class="contact"><b>Horário de Funcionamento:</b></p>
+                        <p>Segunda a Sábado das 9hs às 12hs | 14hs às 18hs , exceto feriados</p>
+                    </li>
+                </ul>   
+            </div>
+            <div class="title_grid3">
+                <div class="img_social">
+                    <ul>
+                        <li>
+                            <a href="https://facebook.com/mjkescolademusica" target="_blank">
+                                <img src="{%static 'img/icon_facebook.svg' %}" alt="Icone facebook" width="50" height="50"></a>
+                            <a href=="https://www.instagram.com/mjkescolademusica" target="_blank">
+                                <img src="{%static 'img/icon_instagram.svg' %}" alt="Icone instagram" width="50" height="50"></a>
+                            <a href="">
+                                <img src="{%static 'img/icon_telegram.svg' %}" alt="Icone telegram" width="50" height="50">
+                            <a href="https://www.youtube.com/@mjkescolademusica" target="_blank">
+                                <img src="{%static 'img/icon_youtube.svg' %}" alt="Icone youtube" width="50" height="50"></a>
+                        </li>
+                    </ul>
+                </div> 
+            </div> 
+            <div class="title_grid_left">
+                <ul>
+                    <li><a href="{% url 'index' %}">HOME</a></li>
+                    <li><a href="{% url 'quemSomos' %}">QUEM SOMOS</a></li>
+                    <li><a href="{% url 'metodologia' %}">CURSOS</a></li>
+                    <li><a href="{% url 'blog' %}">NOTÍCIAS</a></li>
+                    <li><a href="{% url 'fotos' %}">FOTOS</a></li>
+                    <li><a href="{% url 'contatos' %}">CONTATOS</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'login' %}">EXTRANET</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

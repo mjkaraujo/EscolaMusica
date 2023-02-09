@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section id="home" class="home-img-head">
+    <div class="main-content home-content">
+        <h1 class="text-study">Estude</h1>
+        <h1 class="text-music">Música</h1>
+    </div>
+    <div class="button-resume">
+        <a href="{% url 'metodologia' %}">
+            <button class="button">Conheça Nosso Método</button>
+        </a>
+    </div>
+</section>
+
+<section id="curso" class="white-bg section">
+    <div class="main-content grid-content title_page">
+        <h1>Cursos</h1>
+        <div class="title-course grid">
+            <div class="logo_cursos">
+                <a href="{% url 'guitarra' %}">
+                    <img src="{% static 'img/logo_guitarra.png' %}" alt="Logo guitarra">
+                        <h4>Guitarra</h4> 
+                        <p>Seja um guitarrista completo da base ao solo. Aprenda as técnicas de guitarra mais utilizadas pelos grandes mestres da palheta.</p>
+                    <button>Saiba mais</button>     
+                </a>
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'violao' %}">
+                    <img src="{% static 'img/logo_violao.png' %}" alt="Logo violao">
+                        <h4>Violão</h4> 
+                        <p>Da rodinha de amigos aos palcos, desenvolva suas habilidades com o instrumento mais popular do planeta e aprenda violão para todas as ocasiões.</p>
+                    <button>Saiba mais</button>
+                </a>              
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'baixo' %}">
+                    <img src="{% static 'img/logo_baixo.png' %}" alt="Logo baixo">
+                        <h4>Baixo</h4> 
+                        <p>Desenvolva técnicas poderosas no baixo e faça o chão tremer. Do pizzicato ao slap deixe os graves bater e conduza a cozinha nos palcos.</p>
+                    <button>Saiba mais</button>
+                </a>              
+            </div>
+        </div>
+        <div class="title-course grid">
+            <div class="logo_cursos">
+                <a href="{% url 'teclado' %}">
+                    <img src="{% static 'img/logo_teclado.png' %}" alt="Logo teclado">
+                        <h4>Teclado</h4> 
+                        <p>Aprenda a tocar, timbrar, utilizar os ritmos mais variados do teclada. Desenvolva habilidades de leitura, posição das mãos e outras técnicas das "88" teclas.</p>
+                <button>Saiba mais</button>
+            </a>              
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'bateria' %}">
+                    <img src="{% static 'img/logo_bateria.png' %}" alt="Logo bateria">
+                        <h4>Bateria</h4> 
+                        <p>Viradas, solos, acompanhamentos. Aprenda a ditar o ritmo das músicas utilizando desde batidas simples até viradas complexas.</p>
+                    <button>Saiba mais</button>  
+                </a>            
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'canto' %}">
+                    <img src="{% static 'img/logo_canto.png' %}" alt="Logo canto">
+                        <h4>Canto</h4> 
+                        <p>Solte a voz e perca o medo de cantar. Venha aprender técnicas vocais, respiração, entonação da voz e muito mais.</p>
+                    <button>Saiba mais</button>  
+                </a>            
+            </div>
+        </div>
+        <div class="title-course grid">   
+            <div class="logo_cursos">
+                <a href="{% url 'teoria' %}">
+                    <img src="{% static 'img/logo_teoria.png' %}" alt="Logo teoria">
+                        <h4>Teoria Musical</h4> 
+                        <p>Deixe de ser um medíocre na música. Aprenda teoria musical de forma didática e dinâmica, e seja diferenciado.</p>
+                <button>Saiba mais</button>  
+                </a>            
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'harmonia' %}">
+                    <img src="{% static 'img/logo_harmonia.png' %}" alt="Logo harmonia">
+                        <h4>Harmonia</h4> 
+                        <p>Aprenda como as músicas são compostas, como funciona cadências, empréstimos modais, formação de acordes e mais.</p>
+                    <button>Saiba mais</button> 
+                </a>             
+            </div>
+            <div class="logo_cursos">
+                <a href="{% url 'percepcao' %}">
+                    <img src="{% static 'img/logo_percepcao.png' %}" alt="Logo percepção">
+                        <h4>Percepção</h4> 
+                        <p>Saia dos sites de cifras e aprenda a tirar as músicas de ouvido. Aprenda a reconhecer os sons das notas e dos acordes.</p>
+                    <button>Saiba mais</button>  
+                </a>            
+            </div>
+        </div>
+    </div>
+</section>
+<section id="post" class="main-bg section">
+    <div class="main-content title_white title_page">
+        <h1>Novidades</h1>
+    </div>
+    <div class="main-carousel">
+        <div class="galery">
+            <div class="photos">
+                <img src="{% static 'img/aula_de_guitarra_#1.png' %}" alt="Aulas de Guitarra">
+                <img src="{% static 'img/aula_de_violão_#1.png' %}" alt="Aulas de Volão">
+                <img src="{% static 'img/aula_de_teclado_#1.png' %}" alt="Aulas de Teclado">
+                <img src="{% static 'img/aula_de_contrabaixo_#1.png' %}" alt="Aulas de Contrabaixo">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

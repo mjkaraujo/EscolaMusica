@@ -1,0 +1,100 @@
+.table-link-mensalidades {
+    margin-left: 8rem;
+    width: 100%;
+}
+.mensalidades-content {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+}
+.mensalidades-content p {
+    margin-left: 50rem;
+    padding-bottom: 6rem;
+}
+.mensalidades-content h1 {
+    text-align: center;
+}
+.mensalidades-cadastro {
+    display: flex;
+}
+.mensalidades-cadastro h1 {
+    margin-left: 50rem;
+}
+.mensalidades-cadastro img {
+    width: 7rem;
+    height: 7rem;
+    margin-top: 8rem;
+    border: solid var(--gold-color);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+ select#id_aluno.select.form-control {
+    padding: 0.2em;
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 20%);
+    font-size: 18px;
+    width: 60rem;
+    height: 4rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+select#id_status.select.form-control {
+    padding: 0.2em;
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 20%);
+    font-size: 18px;
+    width: 10rem;
+    height: 4rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+select#id_vencimento_day.selectdatewidget.form-control, 
+select#id_pagamento_day.selectdatewidget.form-control {
+    margin-left: 4rem;
+}
+
+input#id_valor.numberinput.form-control,
+input#id_desc.numberinput.form-control,
+input#id_acres.numberinput.form-control,
+input#id_total.textinput.form-control {
+    padding: 0.2em;
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 20%);
+    font-size: 18px;
+    width: 20rem;
+    height: 4rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+input.btn-enviar {
+    width: 12rem;
+}
+
+.table-mensalidades {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    text-align: left;
+  }
+.size {
+    width: 1100rem;
+  }
+.table-mensalidades th,
+.table-mensalidades td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+.table-mensalidades thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+.table-mensalidades tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+

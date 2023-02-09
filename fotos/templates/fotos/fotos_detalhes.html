@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}{{ fotos.titulo_fotos|title }} | {% endblock %}
+
+{% block 'conteudo' %}
+
+<!-- POST -->
+<div class="menu-spacing"></div>
+<div class="main-content">
+<div class="items-center">
+    <div class="col-xl-8 text-center">
+        <h2>{{ fotos.titulo_fotos }}</h2>
+        <h5>{{ fotos.excerto_fotos }}</h5>
+        <p class="text-muted mt-4">
+            <small>
+                {{ fotos.autor_fotos }} | {{ fotos.data_fotos }}
+            </small>
+        </p>
+    </div>
+</div>
+
+<div class="items-center">
+    <div class="col-xl-8">
+
+        {% if fotos.imagem_fotos %}
+            <img src="{{ fotos.imagem_fotos.url }}" alt="{{ fotos.titulo_fotos }}">
+        {% endif %}
+
+        {{ fotos.conteudo_fotos|safe }}
+
+    </div>
+</div>
+</div>
+
+{% endblock %}

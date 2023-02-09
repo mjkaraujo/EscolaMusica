@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load easy_mask %}
+{% load static %}
+
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<div class="mensalidades-content">
+
+    <form method="GET" action="{% url 'busca_mensalidades' %}">
+    <div>
+        <div class="search-grid">
+        <input class="search-control"
+                type="search" value="{{ request.GET.termo }}"
+                id="search-input"
+                placeholder="Digite sua pesquisa"
+                name="termo">
+        </div>
+    </div>
+    </form>
+
+    {% include 'partials/_messages.html' %}
+    
+    <br><br>
+    <div class="mensalidades-cadastro">
+        <a href="{% url 'cadastro_mensalidades' %}">
+            <img src="{% static 'img/receber.png' %}" alt="Imagem de dinheiro">
+        </a>
+        <h1>Mensalidades</h1>
+    </div>
+    <br>
+    <table class="table-mensalidades">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Vencimento</th>
+            <th>Aluno</th>
+            <th>Status</th>
+            <th>Pagamento</th>
+            <th>Valor</th>
+            <th>Desconto</th>
+            <th>Acréscimo</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mensalidades in mensalidades %}
+            <tr>
+                <td>{{ mensalidades.id }}</td>
+                <td>{{ mensalidades.vencimento|date:"d/m/Y" }}</td>
+                <td class="size"><a href="{% url 'link_alunos' mensalidades.id %}">{{ mensalidades.aluno }}</a></td>
+                <td>{{ mensalidades.status }}</td>
+                <td>{{ mensalidades.pagamento|date:"d/m/Y" }}</td>
+                <td>{{ mensalidades.valor|floatformat:2 }}</td>
+                <td>{{ mensalidades.desc|floatformat:2 }}</td>
+                <td>{{ mensalidades.acres|floatformat:2 }}</td>
+                <td>{{ mensalidades.total|floatformat:2 }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Nenhum registro encontrado.</td>
+            </tr>            
+        {% endfor %}
+    </tbody>
+    </table> 
+
+
+    {% include 'partials/_pagination.html' %}
+
+</div>     
+        
+{% endblock %}

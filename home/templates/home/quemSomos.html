@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="white-bg">    
+    <div class="main-content">
+        <h1>Quem Somos</h1>
+    </div>
+    <div class="quem-somos">
+        <div class="left-quem-somos">
+            <img src="{% static 'img/quem-somos.png' %}" alt="Imagem Quem Somos">
+        </div>
+        <div class="right-quem-somos">
+            <p>Nós da MJK Escola de Música somos uma escola com valores cristãos, que nos dedicamos ao ensino do instrumento sem distinção de ritmo ou estilos musicais.<br>
+            Acreditamos que a música tem o poder de manifestar sentimentos bons, assim como proporcionar excelentes entretenimentos e alegrias</br>
+            Sabemos que a música ajuda a melhorar a percepção, criatividade, paciência, o raciocinio lógico e diversos outros benefícios a saúde diminuindo o estresse, a ansiedade e a depressão.</br>
+            A música não tem limites de idade, trabalhamos com crianças, jovens, adultos e idosos.</p>
+        </div>
+</section>
+
+
+{% endblock %}

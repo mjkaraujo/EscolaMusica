@@ -1,0 +1,42 @@
+.menu-admin-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.menu-admin  {
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 8rem;
+    padding-bottom: 0;
+}
+.menu-admin img {
+    width: 5rem;
+    margin-top: 8rem;
+    justify-items: right;
+}
+.admin-grid {
+    display: grid;
+    grid-template-rows: 35rem 35rem;
+    padding-top: 8rem;
+}
+.admin-grid img {
+    width: 20rem;
+}
+.admin-grid p {
+    text-align: center;
+    font-size: 30px;
+    color: var(--primary-color);
+}
+.admin-grid-one {
+    display: flex;
+    grid-row-start: 1;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.admin-grid-two {
+    display: flex;
+    grid-row-start: 2;
+    align-items: center;
+    justify-content: space-between;
+}

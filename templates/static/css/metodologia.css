@@ -1,0 +1,57 @@
+.main-mb1{
+    background-image: 
+        linear-gradient(rgba(46, 45,45, 0.5), rgba(255, 192, 0, 0.5)),
+        url(../img/mb1.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 70rem;
+    height: 50rem;
+}
+.main-mb2 {
+    background-image: 
+        linear-gradient(rgba(46, 45,45, 0.5), rgba(255, 192, 0, 0.5)),
+        url(../img/mb2.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 70rem;
+    height: 50rem;
+}
+.main-m1 {
+    background-image: 
+        linear-gradient(rgba(46, 45,45, 0.5), rgba(255, 192, 0, 0.5)),
+        url(../img/m1.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 70rem;
+    height: 50rem;
+}
+.main-m2 {
+    background-image: 
+        linear-gradient(rgba(46, 45,45, 0.5), rgba(255, 192, 0, 0.5)),
+        url(../img/m2.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 70rem;
+    height: 50rem;
+}
+.main-m3 {
+    background-image: 
+        linear-gradient(rgba(46, 45,45, 0.5), rgba(255, 192, 0, 0.5)),
+        url(../img/m3.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 70rem;
+    height: 50rem;
+}
+.grid-met {
+    display: grid;
+    grid-template-columns: 80rem 80rem;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
+.text-met {
+    width: 80%;
+    min-width: 250px;
+    display: inline-block;
+    margin-top: 20%;
+}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="main-microfone section">    
+    <div class="text-guitar main-content">
+        <h1>Canto</h1>
+    </div>   
+</section>
+<section class="white-bg section">
+    <div class="grid-curso">
+        <div class="text-body grid-left-up">
+            <h2>Aulas de Canto</h2>
+            <p>Solte a voz e venha aprender as técnicas desse instrumento poderoso. Curso voltado aos cantores e aspirantes a cantores que querem estar na frente do palco comandando galera.<br>
+                Se você deseja ter um repertório vasto, eclético, compor suas próprias canções ou fazer cover daquele artista que ama. Mande-nos uma mensagem e conheça nossa grade.
+            </p>
+        </div>
+        <div class="text-body grid-left-down">
+            <h2>Conteúdo</h2>
+            <p><strong>Aulas presenciais na escola ou no conforto do seu lar e também aulas online.</strong></p>
+            <ul>
+                <li>Anatomia da voz</li>
+                <li>Postura e posicionamento</li>
+                <li>Exercícios</li>
+                <li>Respiração</li>
+                <li>leitura de partitura</li>
+                <li>Terças e quintas</li>
+                <li>Notas musicais</li>
+                <li>Escalas: maiores e menores </li>
+                <li>Ritmica</li>
+                <li>Registro vocal</li>
+                <li>Improvisação</li>
+                <li>Repertório</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <div class="grid-right-up-canto">
+            <img src="{% static 'img/microfone.png' %}" alt="Imagem de um microfone">
+        </div>
+        <div class="grid-right-down form-courses">
+            <h4>Horários, planos e outras informações</h4>
+
+            <form method="POST" action="#canto">
+                {% csrf_token %}
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                
+                {% for visible_field in form.visible_fields %}
+                        {{ visible_field|as_crispy_field }}
+                {% endfor %}
+
+                <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+                "></div>
+                <br/>
+
+                {% include 'partials/_messages.html' %}
+                <input type="submit" class="btn-enviar" value="Enviar">
+            </form>      
+        </div>
+    </div>
+</section>
+
+{% endblock %}

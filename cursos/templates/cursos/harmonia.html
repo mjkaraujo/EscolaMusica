@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="main-harmonia section">    
+    <div class="text-guitar main-content">
+        <h1>Harmonia</h1>
+    </div>   
+</section>
+<section class="white-bg section">
+    <div class="grid-curso">
+        <div class="text-body grid-left-up">
+            <h2>Aulas de Harmonia</h2>
+            <p>Curso voltado aqueles que desejam compreender como a música funciona, técnicas de composição ou até mesmo se preparar para um vestibular em música.<br>
+                Venha entender como funciona cadências, escalas, acordes e muito mais.
+            </p>
+        </div>
+        <div class="text-body grid-left-down">
+            <h2>Conteúdo</h2>
+            <p><strong>Aulas presenciais na escola ou no conforto do seu lar e também aulas online.</strong></p>
+            <ul>
+                <li>Harmonia básica</li>
+                <li>Compreendendo cadências</li>
+                <li>Intervalos</li>
+                <li>leitura: cifra e partitura</li>
+                <li>Escalas: pentatônicas, maiores e menores </li>
+                <li>Harmonia funcional</li>
+                <li>Tríades abertas e fechadas</li>
+                <li>Tétrades</li>
+                <li>Campo harmônico</li>
+                <li>Improvisação</li>
+                <li>Empréstimo Modal</li>
+                <li>Empréstimo Tonal</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <div class="grid-right-up-harmonia">
+            <img src="{% static 'img/harmonia.png' %}" alt="Imagem de uma clave musical">
+        </div>
+        <div class="grid-right-down form-courses">
+            <h4>Horários, planos e outras informações</h4>
+
+            <form method="POST" action="#harmonia">
+                {% csrf_token %}
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                
+                {% for visible_field in form.visible_fields %}
+                        {{ visible_field|as_crispy_field }}
+                {% endfor %}
+
+                <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+                "></div>
+                <br/>
+
+                {% include 'partials/_messages.html' %}
+                <input type="submit" class="btn-enviar" value="Enviar">
+            </form>      
+        </div>
+    </div>
+</section>
+
+{% endblock %}

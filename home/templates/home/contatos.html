@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<div class="main-content">
+    <h1>Contatos</h1>
+<br>
+<br>
+<div class="coment">
+    
+    <div class="col-xl-8">
+        <h4>Horário de Funcionamento:</h4>
+        <p class="p-left">Segunda a Sábado das 9hs às 12hs | 14hs às 18hs , exceto feriados</p>
+    </div>
+
+    <div class="letter_black">
+        <ul class="contatos">
+            <li>
+                <img src="{%static 'img/icon_email.svg' %}" alt="Icone email" width="30" height="30">
+                <article>mjkescolademusica@gmail.com</article>
+            </li>
+            <li>
+                <img src="{%static 'img/icon_phone.svg' %}" alt="Icone telefone" width="30" height="30">
+                <article>(19) 99946-4342</article>
+            </li>
+            <div class="img_social">
+                <li>
+                    <a href="https://facebook.com/mjkescolademusica" target="_blank">
+                        <img src="{%static 'img/icon_facebook.svg' %}" alt="Icone facebook" width="50" height="50"></a>
+                    <a href="https://www.instagram.com/mjkescolademusica" target="_blank">
+                        <img src="{%static 'img/icon_instagram.svg' %}" alt="Icone instagram" width="50" height="50"></a>
+                    <a href="">
+                        <img src="{%static 'img/icon_telegram.svg' %}" alt="Icone telegram" width="50" height="50">
+                    <a href="https://www.youtube.com/@mjkescolademusica" target="_blank">
+                        <img src="{%static 'img/icon_youtube.svg' %}" alt="Icone youtube" width="50" height="50"></a>
+                </li>
+            </div>
+        </ul>    
+    </div>
+        <div class="map">
+            <h4>localização</h4>
+            <div class="letter_black">
+                <ul class="contatos">
+                    <li>
+                        <img src="{%static 'img/icon_location.svg' %}" alt="Icone localização" width="30" height="30">
+                        <article>Rua Bernardino Ferreira de Lima, 95 <br>Jd Nova Hortolândia - cep: 13813-091</article>
+                    </li>
+                </ul>
+                <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d513346.1658096664!2d-47.57767151597642!3d-22.815039159381662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b95bfb508f39%3A0x1ce857c1058169b4!2sHortol%C3%A2ndia%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1666606567605!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>       
+            </div>
+        </div>
+
+    <div class="form-courses form-background">
+        <h4>Deixe sua mensagem.</h4>
+
+        <form method="POST" action="#envia_contatos">
+            {% csrf_token %}
+
+            {% for hidden_field in form.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+            
+            {% for visible_field in form.visible_fields %}
+                    {{ visible_field|as_crispy_field }}
+            {% endfor %}
+
+            <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+            "></div>
+            <br/>
+
+            {% include 'partials/_messages.html' %}
+            <input type="submit" class="btn-enviar" value="Enviar">
+        </form>      
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

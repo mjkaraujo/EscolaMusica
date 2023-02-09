@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load easy_mask %}
+{% load static %}
+
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<div class="alunos-content">
+
+    <form method="GET" action="{% url 'busca_alunos' %}">
+    <div>
+        <div class="search-grid">
+        <input class="search-control"
+                type="search" value="{{ request.GET.termo }}"
+                id="search-input"
+                placeholder="Digite sua pesquisa"
+                name="termo">
+        </div>
+    </div>
+    </form>
+
+    {% include 'partials/_messages.html' %}
+    
+    <br><br>
+    <div class="alunos-cadastro">
+        <a href="{% url 'cadastro_alunos' %}">
+            <img src="{% static 'img/aluno.png' %}" alt="Imagem de cadastro de aluno">
+        </a>
+        <h1>Alunos</h1>
+    </div>
+    <br>
+    <table class="table">
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Telefone</th>
+        <th>Curso</th>
+        <th>Módulo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alunos in alunos %}
+            <tr>
+                <td>{{ alunos.id }}</td>
+                <td><a href="{% url 'link_alunos' alunos.id %}">{{ alunos.nome }}</a></td>
+                <td>{{ alunos.sobrenome }}</td>
+                <td>{{ alunos.telefone | phone}}</td>
+                <td>{{ alunos.curso }}</td>
+                <td>{{ alunos.modulo }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Nenhum registro encontrado.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table> 
+
+
+    {% include 'partials/_pagination.html' %}
+
+</div>     
+        
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="main-baixo section">    
+    <div class="text-guitar main-content">
+        <h1>Baixo</h1>
+    </div>   
+</section>
+<section class="white-bg section">
+    <div class="grid-curso">
+        <div class="text-body grid-left-up">
+            <h2>Aulas de Baixo</h2>
+            <p>Contrabaixo elétrico é um instrumento para os grooveiros de plantão, curso com muito conteúdo técnico, condução ritmica precisa para os amantes das 4 cordas.<br>
+                Se você deseja ter um repertório vasto, eclético, compor suas próprias canções ou fazer cover daquele artista que ama. Mande-nos uma mensagem e conheça nossa grade.
+            </p>
+        </div>
+        <div class="text-body grid-left-down">
+            <h2>Conteúdo</h2>
+            <p><strong>Aulas presenciais na escola ou no conforto do seu lar e também aulas online.</strong></p>
+            <ul>
+                <li>Fundamentos do baixo elétrico</li>
+                <li>Postura e posicionamento</li>
+                <li>Notas no braço do instrumento</li>
+                <li>Intervalos</li>
+                <li>leitura: cifra, tablatura e partitura</li>
+                <li>Técnicas: mão direita x mão esquerda</li>
+                <li>Pizzicato x palhetada</li>
+                <li>Slap</li>
+                <li>Escalas: pentatônicas, maiores e menores </li>
+                <li>Acordes, arpejos, inversões</li>
+                <li>Tríades abertas e fechadas</li>
+                <li>Tétrades</li>
+                <li>Campo harmônico</li>
+                <li>Improvisação</li>
+                <li>Repertório</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <div class="grid-right-up-baixo">
+            <img src="{% static 'img/baixo-eletrico.png' %}" alt="Imagem de um baixo elétrico">
+        </div>
+        <div class="grid-right-down form-courses">
+            <h4>Horários, planos e outras informações</h4>
+
+            <form method="POST" action="#baixo">
+                {% csrf_token %}
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                
+                {% for visible_field in form.visible_fields %}
+                        {{ visible_field|as_crispy_field }}
+                {% endfor %}
+
+                <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+                "></div>
+                <br/>
+
+                {% include 'partials/_messages.html' %}
+                <input type="submit" class="btn-enviar" value="Enviar">
+            </form>      
+        </div>
+    </div>
+</section>
+
+{% endblock %}

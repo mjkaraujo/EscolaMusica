@@ -1,0 +1,21 @@
+
+
+div.quem-somos {
+    display: grid;
+    grid-template-columns: 50rem 80rem;
+    position: relative;
+    margin-left: 30rem;
+    grid-column-gap: 4rem;
+    min-height: 100vh;
+}
+
+div.left-quem-somos img{
+    grid-column-start: 1;
+    width: 100%;
+    box-shadow: 0 0 0 2rem var(--primary-color);
+}
+ div.right-quem-somos {
+    grid-column-start: 2;
+    font-size: 24px;
+    padding: 4rem;
+ }

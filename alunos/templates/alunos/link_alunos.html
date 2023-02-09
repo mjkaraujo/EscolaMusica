@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load easy_mask %}
+{% load static %}
+
+{% block 'titulo' %}{{ alunos.nome }} | {% endblock %}
+
+{%block 'conteudo' %}
+<div class="menu-spacing"></div>
+
+<div class="alunos-content">
+
+<h1>{{ alunos.nome }} {{ alunos.sobrenome }}</h1>
+
+    {% if alunos.foto %}
+    
+        <p>
+            <img src="{{ alunos.foto.url }}" style="max-width: 250px; height: auto;" alt="Foto do aluno" >
+        </p>
+
+    {% endif %}
+    <table class="table-link-alunos">
+        <tbody class="table-link-alunos">
+            <tr class="title-table">
+                <td>ID</td>
+                <td>Data de Início</td>
+                <td>Curso</td>  
+                <td>Módulo</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.id }}</td>
+                <td>{{ alunos.data_inicio }}</td>
+                <td>{{ alunos.curso }}</td>
+                <td>{{ alunos.modulo }}</td>
+            </tr>
+
+            <tr class="title-table">
+                <td>CPF</td>
+                <td>Nome Completo</td>
+                <td>Data de Nascimento</td>
+                <td>Sexo</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.cpf | cpf }}</td>
+                <td>{{ alunos.nome }} {{ alunos.sobrenome }}</td>
+                <td>{{ alunos.data_nascimento }}</td>
+                <td>{{ alunos.sexo }}</td>
+            </tr>
+
+            <tr class="title-table">
+                <td>Telefone</td>
+                <td>E-mail</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.telefone | phone }}</td>
+                <td>{{ alunos.email }}</td>
+            </tr> 
+
+            <tr class="title-table">            
+                <td>Endereço</td>
+                <td>Bairro</td>
+                <td>Cidade</td>
+                <td>CEP</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.endereço }}</td>
+                <td>{{ alunos.bairro }}</td>
+                <td>{{ alunos.cidade }}</td>
+                <td>{{ alunos.cep | cep }}</td>
+            </tr>
+            
+            <tr class="title-table">
+                <td>Escolaridade</td>
+                <td>Observações</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.escolaridade }}</td>
+                <td colspan="3">{{ alunos.descricao }}</td>
+            </tr>
+
+            <tr class="title-table">
+                <td>Responsável (se menor)</td>
+                <td>CPF do responsavel</td>
+                <td>Contato do responsavel</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.responsavel }}</td>
+                <td>{{ alunos.cpf_responsavel | cpf }}</td>
+                <td>{{ alunos.tel | phone }}</td>
+            </tr>
+
+            <tr class="title-table">
+                <td>Data criação</td>
+            </tr>
+            <tr>
+                <td>{{ alunos.data_criacao|date:'d/m/y H:i:s' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

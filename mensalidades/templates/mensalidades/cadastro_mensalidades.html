@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block 'titulo' %} Cadastro {% endblock %}
+
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section class="main-content form-cadastro-alunos">
+    <h1>Cadastro de Mensalidades</h1>
+    
+    <form method="POST" enctype="multipart/form-data" autocomplete="off">
+        
+        {% include 'partials/_messages.html' %}
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+        {% endfor %}
+        
+        {% for visible_field in form.visible_fields %}
+                {{ visible_field|as_crispy_field }}
+        {% endfor %}
+
+
+        {% include 'partials/_messages.html' %}
+
+        <!-- javascript para aparecer o valor total em tempo real -->
+
+        <script>
+            const valorInput = document.getElementById('id_valor');
+            const descInput = document.getElementById('id_desc');
+            const acresInput = document.getElementById('id_acres');
+            const totalInput = document.getElementById('id_total');
+        
+            valorInput.addEventListener('input', updateResult);
+            descInput.addEventListener('input', updateResult);
+            acresInput.addEventListener('input', updateResult);
+        
+            function updateResult() {
+                const valor = parseFloat(valorInput.value) || 0;
+                const desc = parseFloat(descInput.value) || 0;
+                const acres = parseFloat(acresInput.value) || 0;
+                totalInput.value = valor - desc + acres;
+            }
+        </script>
+        
+        <!-- ------------------------------------------------------ -->
+
+        <input type="submit" class="btn-enviar" value="Enviar">
+    </form>
+</section>
+
+{% endblock %}

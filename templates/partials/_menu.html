@@ -1,0 +1,39 @@
+{% load static %}
+<input id="close-menu" class="close-menu" type="checkbox" aria-label="close-menu" role="button">
+        <label class="close-menu-label" for="close-menu" title="close menu"></label>
+
+    <aside class="menu">
+        <div class="menu-content"> 
+            <h1 onclick="getElementById('close-menu').checked = false;">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/logo-head.png' %}" alt="logo MJK">
+                </a>
+            </h1>
+        
+            <nav class="a-link">
+                <ul onclick="getElementById('close-menu').checked = false;">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'quemSomos' %}">Quem Somos</a></li>
+                    <div class="dropdown">
+                        <button>Cursos ⌵</button>
+                        <div class="dropdown-content">
+                            <a href="{% url 'guitarra' %}">Guitarra</a>
+                            <a href="{% url 'violao' %}">Violão</a>
+                            <a href="{% url 'baixo' %}">Baixo</a>
+                            <a href="{% url 'teclado' %}">Teclado</a>
+                            <a href="{% url 'bateria' %}">Bateria</a>
+                            <a href="{% url 'canto' %}">Canto</a>
+                            <a href="{% url 'teoria' %}">Teoria Musical</a>
+                            <a href="{% url 'harmonia' %}">Harmonia</a>
+                            <a href="{% url 'percepcao' %}">Percepção Musical</a>
+                        </div>
+                    </div>
+                    <li><a href="{% url 'metodologia' %}">Metodologia</a></li>
+                    <li><a href="{% url 'blog' %}">Notícias</a></li>
+                    <li><a href="{% url 'fotos' %}">Fotos</a></li>
+                    <li><a href="{% url 'contatos' %}">Contato</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </aside>

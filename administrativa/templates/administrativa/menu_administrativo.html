@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<div class="menu-admin">  
+    <a href="{% url 'logout' %}">
+        <img src="{% static 'img/fechar.png' %}" alt="Imagem de botão fechar">
+    </a>
+</div> 
+<section  class="menu-admin-content">      
+    <h1>Painel Administrativo</h1>
+    <div class="admin-grid">
+        <div class="admin-grid-one">
+            <a href="{% url 'alunos' %}">
+                <img src="{% static 'img/aluno.png' %}" alt="Icone aluno">
+                <p>Alunos</p>
+            </a>
+            <a href="{% url 'professores' %}">
+                <img src="{% static 'img/professor.png' %}" alt="Icone professor">
+                <p>Professores</p>
+            </a>
+            <a href="#">
+                <img src="{% static 'img/cursos.png' %}" alt="Icone de livros">
+                <p>Aulas</p>
+            </a>
+        </div>
+
+        <div class="admin-grid-two">
+            <a href="{% url 'mensalidades' %}">
+                <img src="{% static 'img/receber.png' %}" alt="Icone de dinheiro">
+                <p>Mensalidades</p>
+            </a>
+            <a href="#">
+                <img src="{% static 'img/pagar.png' %}" alt="Icone de contas a pagar">
+                <p>Contas à pagar</p>
+            </a>
+            <a href="#">
+                <img src="{% static 'img/compras.png' %}" alt="Icone de compras">
+                <p>Compras</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'conteudo' %}
+
+<div class="menu-spacing"></div>
+
+<section  class="main-percepcao section">    
+    <div class="text-guitar main-content">
+        <h1>Percepção Musical</h1>
+    </div>   
+</section>
+<section class="white-bg section">
+    <div class="grid-curso">
+        <div class="text-body grid-left-up">
+            <h2 class="font-percepcao">Aulas de Percepção Musical</h2>
+            <p>Saia dos sites de cifra de uma vez por todas e aprenda a tirar as músicas de ouvido.<br>
+                Se você deseja tirar músicas de ouvido, fazer acompanhamentos sem a necessidade de ficar lendo cifras. Este curso é para você
+            </p>
+        </div>
+        <div class="text-body grid-left-down">
+            <h2>Conteúdo</h2>
+            <p><strong>Aulas presenciais na escola ou no conforto do seu lar e também aulas online.</strong></p>
+            <ul>
+                <li>Anatomia do ouvido</li>
+                <li>Teoria Musical</li>
+                <li>Harmonia</li>
+                <li>Intervalos</li>
+                <li>Genêros musicais</li>
+                <li>Campo harmonico</li>
+                <li>Solfejos</li>
+                <li>Acordes e escalas</li>
+                <li>Cadências principais</li>
+                <li>Divisão musical</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <div class="grid-right-up-percepcao">
+            <img src="{% static 'img/percepcao.png' %}" alt="Imagem de um ouvido">
+        </div>
+        <div class="grid-right-down form-courses">
+            <h4>Horários, planos e outras informações</h4>
+
+            <form method="POST" action="#percepcao">
+                {% csrf_token %}
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                
+                {% for visible_field in form.visible_fields %}
+                        {{ visible_field|as_crispy_field }}
+                {% endfor %}
+
+                <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+                "></div>
+                <br/>
+
+                {% include 'partials/_messages.html' %}
+                <input type="submit" class="btn-enviar" value="Enviar">
+            </form>      
+        </div>
+    </div>
+</section>
+
+{% endblock %}

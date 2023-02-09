@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #2e2d2d;
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+    --gold-color: #ffc000; 
+}/*
+ALTERAR: 00008B -> Cor do topo
+ALTERAR: 00008B -> Cor dos links e cabeçalhos
+*/
+
+#branding h1,
+#branding h1 a,
+#branding h1 a:link,
+#branding h1 a:visited {
+    color: var(--white-color);
+}
+
+#header {
+    background: var(--primary-color);
+    font-size: 48px;
+}
+
+#user-tools a:focus, #user-tools a:hover {
+    border-bottom-color: var(--white-color);
+    color: var(--white-color);
+    font-size: 18px;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: var(--gold-color);
+    color: var(--white-color);
+    font-size: 18px;
+}
+
+div.breadcrumbs {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.paginator a:link, .paginator a:visited {
+    background: var(--primary-color) !important;
+    color: var(--white-color);
+}
+
+.paginator a:hover {
+    background: var(--primary-color) !important;
+    color: var(--white-color);
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: var(--primary-color);
+}
+
+.button.default:active,
+input[type=submit].default:active,
+.button.default:focus,
+input[type=submit].default:focus,
+.button.default:hover,
+input[type=submit].default:hover {
+    background: var(--primary-color);
+}
+
+.object-tools a:focus, .object-tools a:hover {
+    background-color: var(--primary-color);
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+.button:active,
+input[type=submit]:active,
+input[type=button]:active,
+.button:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+.button:hover,
+input[type=submit]:hover,
+input[type=button]:hover {
+    background-color: var(--primary-color);
+}
+
+#changelist-filter li.selected a {
+    color: var(--primary-color) !important;
+}
+
+#changelist-filter a:focus,
+#changelist-filter a:hover,
+#changelist-filter li.selected a:focus,
+#changelist-filter li.selected a:hover {
+    color: var(--primary-color) !important;
+}
+
+.selector-chosen h2 {
+    background: var(--primary-color) !important;
+    color: var(--white-color);
+}
+
+a.active.selector-chooseall:focus,
+a.active.selector-clearall:focus,
+a.active.selector-chooseall:hover,
+a.active.selector-clearall:hover {
+    color: var(--primary-color) !important;
+}
