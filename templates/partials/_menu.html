@@ -1,8 +1,8 @@
 {% load static %}
-<input id="close-menu" class="close-menu" type="checkbox" aria-label="close-menu" role="button">
-        <label class="close-menu-label" for="close-menu" title="close menu"></label>
+<input id="close-button" class="close-button" type="checkbox" aria-label="close-button" role="button">
+        <label class="close-button-label" for="close-button" title="close button"></label>
 
-    <aside class="menu">
+    <aside class="menu activate">
         <div class="menu-content"> 
             <h1 onclick="getElementById('close-menu').checked = false;">
                 <a href="{% url 'index' %}">
@@ -11,7 +11,7 @@
             </h1>
         
             <nav class="a-link">
-                <ul onclick="getElementById('close-menu').checked = false;">
+                <ul onclick="getElementById('close-button').checked = false;">
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'quemSomos' %}">Quem Somos</a></li>
                     <div class="dropdown">

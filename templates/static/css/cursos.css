@@ -79,8 +79,8 @@ h2.font-percepcao {
 
 .grid-curso {
     display: grid;
-    grid-template-columns: 90rem 90rem;
-    padding-bottom: 4rem;
+    grid-template-columns: 90rem 56rem;
+    padding-bottom: 2rem;
 }
 
 .grid-left-up{
@@ -207,3 +207,68 @@ h2.font-percepcao {
     margin-left: 4rem;
 }
 
+
+@media (max-width: 768px) {
+    .main-guitarra,
+    .main-baixo,
+    .main-violao,
+    .main-teclado,
+    .main-bateria,
+    .main-microfone,
+    .main-harmonia,
+    .main-teoria,
+    .main-percepcao {
+        background-position: top center;
+    }
+    
+    .grid-curso {
+        grid-template-columns: 100%;
+    }
+    
+    .grid-left-up,
+    .grid-left-down,
+    .grid-right-down {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: auto;
+        grid-row-end: auto;
+    }
+    
+    .grid-right-up img,
+    .grid-right-up-harmonia img,
+    .grid-right-up-baixo img,
+    .grid-right-up-violao img,
+    .grid-right-up-bateria img,
+    .grid-right-up-percepcao img,
+    .grid-right-up-canto img {
+        position: static;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        left: auto;
+        transform: none;
+    }
+    
+    .grid-right-up-harmonia img {
+        transform: none;
+    }
+    
+    .text-guitar h1 {
+        font-size: 6rem;
+        margin-top: 20rem;
+    }
+    
+    .text-body {
+        width: 100%;
+        margin-left: 0;
+        padding: 2rem;
+    }
+    
+    .text-body h2 {
+        width: 100%;
+    }
+    
+    .text-body li {
+        margin-left: 2rem;
+    }
+}

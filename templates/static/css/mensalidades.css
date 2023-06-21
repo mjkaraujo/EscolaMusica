@@ -98,3 +98,53 @@ input.btn-enviar {
     border-top: 2px solid #dee2e6;
   }
 
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+    .table-link-mensalidades {
+      margin-left: 2rem;
+    }
+  
+    .mensalidades-content p {
+      margin-left: 2rem;
+    }
+  
+    .mensalidades-content h1 {
+      text-align: left;
+    }
+  
+    .mensalidades-cadastro h1 {
+      margin-left: 2rem;
+    }
+  
+    .mensalidades-cadastro img {
+      margin-top: 2rem;
+    }
+  
+    select#id_aluno.select.form-control,
+    select#id_status.select.form-control,
+    select#id_vencimento_day.selectdatewidget.form-control,
+    select#id_pagamento_day.selectdatewidget.form-control,
+    input#id_valor.numberinput.form-control,
+    input#id_desc.numberinput.form-control,
+    input#id_acres.numberinput.form-control,
+    input#id_total.textinput.form-control,
+    input.btn-enviar {
+      width: 100%;
+      margin-left: 2rem;
+    }
+  
+    .table-mensalidades {
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .size {
+      width: auto;
+    }
+  
+    .table-mensalidades th,
+    .table-mensalidades td {
+      white-space: nowrap;
+    }
+  }
+  

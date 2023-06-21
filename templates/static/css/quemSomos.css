@@ -7,15 +7,36 @@ div.quem-somos {
     margin-left: 30rem;
     grid-column-gap: 4rem;
     min-height: 100vh;
-}
-
-div.left-quem-somos img{
+  }
+  
+  div.left-quem-somos img {
     grid-column-start: 1;
     width: 100%;
     box-shadow: 0 0 0 2rem var(--primary-color);
-}
- div.right-quem-somos {
+  }
+  
+  div.right-quem-somos {
     grid-column-start: 2;
     font-size: 24px;
     padding: 4rem;
- }
+  }
+  
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+    div.quem-somos {
+      grid-template-columns: 1fr;
+      margin-left: 0;
+      grid-column-gap: 0;
+    }
+    
+    div.left-quem-somos img {
+      grid-column-start: auto;
+      margin-bottom: 2rem;
+      box-shadow: none;
+    }
+    
+    div.right-quem-somos {
+      padding: 2rem;
+    }
+  }
+  

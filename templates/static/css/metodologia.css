@@ -45,13 +45,37 @@
 }
 .grid-met {
     display: grid;
-    grid-template-columns: 80rem 80rem;
+    grid-template-columns: 70rem 70rem;
     justify-content: center;
-    padding-bottom: 4rem;
+    padding-bottom: 10rem;
 }
 .text-met {
     width: 80%;
     min-width: 250px;
     display: inline-block;
     margin-top: 20%;
+    margin-left: 4rem;
 }
+
+@media screen and (max-width: 768px) {
+    .main-mb1,
+    .main-mb2,
+    .main-m1,
+    .main-m2,
+    .main-m3 {
+      width: 100%;
+      height: auto;
+    }
+    
+    .grid-met {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 4rem;
+    }
+    
+    .text-met {
+      width: 90%;
+      margin-top: 2rem;
+    }
+  }

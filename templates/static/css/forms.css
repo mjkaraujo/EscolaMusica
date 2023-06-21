@@ -28,7 +28,7 @@
     border: 1px solid #CCC;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     font-size: 22px;
-    width: 80rem;
+    width: 47rem;
     height: 4rem;
     margin-left: 4rem;
     display: block;
@@ -39,7 +39,7 @@
     border: 1px solid #CCC;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     font-size: 22px;
-    width: 80rem;
+    width: 47rem;
     height: 30rem;
     display: block;
     margin-left: 4rem;
@@ -109,7 +109,7 @@
     border: 1px solid #CCC;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     font-size: 22px;
-    width: 40rem;
+    width: 60rem;
     height: 4rem;
     margin-left: 4rem;
     display: block;
@@ -166,7 +166,7 @@
     border: 1px solid #CCC;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     font-size: 22px;
-    width: 80rem;
+    width: 60rem;
     height: 4rem;
     margin-left: 4rem;
     display: block;
@@ -223,7 +223,7 @@ input#id_foto {
     border: 1px solid #CCC;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     font-size: 22px;
-    width: 80rem;
+    width: 50rem;
     height: 30rem;
     display: block;
     margin-bottom: 1rem;
@@ -248,4 +248,83 @@ input#id_foto {
     color: var(--primary-color);
     background-color: var(--gold-color);
     border-color: var(--gold-color);  
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .grid-curso {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-left-up,
+  .grid-left-down {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
+
+  .grid-right-up img,
+  .grid-right-up-harmonia img,
+  .grid-right-up-baixo img,
+  .grid-right-up-violao img,
+  .grid-right-up-bateria img,
+  .grid-right-up-percepcao img,
+  .grid-right-up-canto img {
+    position: static;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .grid-right-down {
+    display: block;
+    grid-column-start: auto;
+    grid-column-end: auto;
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
+
+  .text-guitar h1 {
+    font-size: 6rem;
+    margin-top: 10rem;
+  }
+
+  .text-body {
+    width: 100%;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .text-body h2 {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .form-courses input[type="text"],
+  .form-courses input[type="email"],
+  .form-courses textarea,
+  .form-courses input.btn-enviar,
+  .form-login input[type="text"],
+  .form-login input[type="password"],
+  .form-login input#login.btn-enviar,
+  .form-cadastro-alunos input[type="file"],
+  .form-cadastro-alunos input[type="tel"],
+  .form-cadastro-alunos input[type="text"],
+  .form-cadastro-alunos input[type="email"],
+  .form-cadastro-alunos select.selectdatewidget,
+  .form-cadastro-alunos select#id_escolaridade,
+  .form-cadastro-alunos select#id_curso,
+  .form-cadastro-alunos select#id_modulo,
+  .form-cadastro-alunos select#id_data_nascimento_day,
+  .form-cadastro-alunos select#id_data_inicio_day,
+  .form-cadastro-alunos input#id_foto,
+  .form-cadastro-alunos textarea,
+  .form-cadastro-alunos input.btn-enviar {
+    width: 100%;
+    margin-left: 0;
+  }
 }

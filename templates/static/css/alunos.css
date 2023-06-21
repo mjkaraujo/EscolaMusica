@@ -19,29 +19,36 @@ td {
   margin-left: 0;
   width: 50rem;
 }
+
 .table-link-alunos {
   margin-left: 8rem;
   width: 100%;
 }
+
 .alunos-content {
     max-width: 140rem;
     margin: 0 auto;
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
+
 .alunos-content p {
    margin-left: 50rem;
    padding-bottom: 6rem;
 }
+
 .alunos-content h1 {
   text-align: center;
 }
+
 .alunos-cadastro {
   display: flex;
 }
+
 .alunos-cadastro h1 {
   margin-left: 50rem;
 }
+
 .alunos-cadastro img {
   width: 7rem;
   height: 7rem;
@@ -50,6 +57,7 @@ td {
   border-radius: 50%;
   padding: 0.5rem;
 }
+
 .table {
     width: 100%;
     margin-bottom: 1rem;
@@ -57,18 +65,37 @@ td {
     text-align: left;
   }
   
-  .table th,
-  .table td {
+.table th,
+.table td {
     padding: 1rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
-  }
+}
   
-  .table thead th {
+.table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
-  }
+}
   
-  .table tbody + tbody {
+.table tbody + tbody {
     border-top: 2px solid #dee2e6;
-  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .alunos-content p,
+    .alunos-cadastro h1 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .alunos-cadastro img {
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td {
+        width: auto;
+    }
+}

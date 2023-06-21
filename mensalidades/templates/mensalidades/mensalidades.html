@@ -49,7 +49,7 @@
             <tr>
                 <td>{{ mensalidades.id }}</td>
                 <td>{{ mensalidades.vencimento|date:"d/m/Y" }}</td>
-                <td class="size"><a href="{% url 'link_alunos' mensalidades.id %}">{{ mensalidades.aluno }}</a></td>
+                <td class="size">{{ mensalidades.aluno }}</a></td>
                 <td>{{ mensalidades.status }}</td>
                 <td>{{ mensalidades.pagamento|date:"d/m/Y" }}</td>
                 <td>{{ mensalidades.valor|floatformat:2 }}</td>
